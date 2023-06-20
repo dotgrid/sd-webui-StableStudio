@@ -18,7 +18,7 @@ class GetGeneratedImagesRequest(BaseModel):
 
 def StableStudio_api(_: gr.Blocks, app: FastAPI):
     @app.get("/StableStudio/check-extension-installed")
-    async def check_extension_installed(extension_name: str):
+    async def check_extension_installed(extension_name: "sd-webui-StableStudio"):
         extension_path = os.path.join(os.getcwd(), "extensions", extension_name)
 
         installed = 0
