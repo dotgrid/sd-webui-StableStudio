@@ -35,8 +35,8 @@ def StableStudio_api(_: gr.Blocks, app: FastAPI):
     async def get_generated_images(request: GetGeneratedImagesRequest):
         outputs_path = os.path.join(os.getcwd(), "outputs")
 
-        txt2img_folder = os.path.join(outputs_path, 'txt2img-images', '**')
-        img2img_folder = os.path.join(outputs_path, 'img2img-images', '**')
+        txt2img_folder = os.path.join(outputs_path, 'text', '**')
+        img2img_folder = os.path.join(outputs_path, 'image', '**')
 
         files = glob.glob(txt2img_folder, recursive=True) + glob.glob(img2img_folder, recursive=True)
 
